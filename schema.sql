@@ -40,3 +40,9 @@ create table invoice_items (
   treatment_id int REFERENCES treatments (id)
 )
 
+create index index_invoices ON invoices (medical_history_id);
+create index index_medical_histories ON medical_histories (patient_id);
+create index index_invoice_items ON invoice_items (invoice_id);
+create index index_invoice_treatments ON invoice_items (treatment_id);
+create index index_med_hist_medical_history ON medical_histories_medical_history (medical_history_id);
+create index index_med_hist_treatments ON medical_histories_treatments (treatment_id);
